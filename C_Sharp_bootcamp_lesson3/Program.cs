@@ -18,17 +18,20 @@ namespace C_Sharp_bootcamp_lesson3
 
             int edad = Int32.Parse(Console.ReadLine());
 
-            Console.WriteLine("¿Tienes carnet?");
+            if (edad < 18) Console.WriteLine("No puedes conducir vehiculos");
 
-            string carnet = Console.ReadLine();
-
-            if (edad >= 18 && carnet == "si")
-            {
-                Console.WriteLine("Puedes conducir vehiculos");
-            }
             else
             {
-                Console.WriteLine("No puedes conducir vehiculos");
+                Console.WriteLine("¿Tienes carnet?");
+
+                string carnet = Console.ReadLine();
+
+                int compara = string.Compare(carnet, "si", true);
+
+                if (compara == 0) Console.WriteLine("Puedes conducir vehiculos");
+
+                else Console.WriteLine("Lo siento mucho no puedes conducir");
+
             }
 
 
